@@ -4,12 +4,16 @@ const counter = document.querySelector('#value');
 const decrement = document.querySelector('[data-action="decrement"]');
 const increment = document.querySelector('[data-action="increment"]');
 
-decrement.addEventListener('click', () => {
-    counter.textContent = counterValue;
-    console.log(counterValue -= 1)
-})
+decrement.addEventListener('click', onDecrementClick)
 
-increment.addEventListener('click', () => {
+increment.addEventListener('click', onIncrementClick)
+
+function onDecrementClick() {
+    counterValue -= 1;
     counter.textContent = counterValue;
-    console.log(counterValue += 1)
-})
+}
+
+function onIncrementClick() {
+    counterValue += 1;
+    counter.textContent = counterValue;
+}
